@@ -1,0 +1,65 @@
+﻿@model Cinemateca.Models.Filme
+
+@{
+    ViewBag.Title = "Apagar";
+}
+
+<h2>Apagar</h2>
+
+<h3>Você deseja excluir este filme?</h3>
+<div>
+    <h4>Filme</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NOME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NOME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SINOPSE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SINOPSE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ANO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ANO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DIRETOR)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DIRETOR)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IDCATEGORIA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IDCATEGORIA)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            
+            @Html.ActionLink("Voltar", "Index",new {},new {@class = "btn btn-primary"})
+        </div>
+    }
+</div>

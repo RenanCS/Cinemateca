@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Cinemateca.Models.Avaliacao>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.IDFILME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CRITICA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NOTA)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.IDFILME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CRITICA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NOTA)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id = item.ID }, new { @class = "btn btn-primary" }) &nbsp;
+            @Html.ActionLink("Detalhes", "Details", new { id = item.ID }, new { @class = "btn btn-info" })&nbsp;
+            @Html.ActionLink("Deletar", "Delete", new { id = item.ID }, new { @class = "btn btn-danger" })&nbsp;
+        </td>
+    </tr>
+}
+
+</table>

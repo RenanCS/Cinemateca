@@ -1,0 +1,43 @@
+﻿@model Cinemateca.Models.Avaliacao
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Avaliacao</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.IDFILME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IDFILME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CRITICA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CRITICA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NOTA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NOTA)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.ID }, new {@class="btn btn-primary"})  &nbsp;
+
+    @Html.ActionLink("Voltar", "Index", new { }, new { @class = "btn btn-primary" })
+</p>

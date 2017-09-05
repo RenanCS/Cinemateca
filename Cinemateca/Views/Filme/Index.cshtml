@@ -1,0 +1,58 @@
+﻿@model IEnumerable<Cinemateca.Models.Filme>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Criar Filme", "Create", new { }, new { @class = "btn btn-primary" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NOME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SINOPSE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ANO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DIRETOR)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IDCATEGORIA)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NOME)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SINOPSE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ANO)
+            </td>
+            <td>
+                @Html.DisplayName("DIRETOR")
+            </td>
+            <td>
+                @Html.DisplayName("CATEGORIA")
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { id = item.ID }, new { @class = "btn btn-primary" }) &nbsp;
+                @Html.ActionLink("Detalhes", "Details", new { id = item.ID }, new { @class = "btn btn-info" })&nbsp;
+                @Html.ActionLink("Deletar", "Delete", new { id = item.ID }, new { @class = "btn btn-danger" })&nbsp;
+            </td>
+        </tr>
+    }
+
+</table>

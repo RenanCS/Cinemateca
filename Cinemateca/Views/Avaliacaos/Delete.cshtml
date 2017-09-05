@@ -1,0 +1,48 @@
+﻿@model Cinemateca.Models.Avaliacao
+
+@{
+    ViewBag.Title = "Apagar";
+}
+
+<h2>Delete</h2>
+
+<h3>Você deseja apagar esta categoria?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.IDFILME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IDFILME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CRITICA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CRITICA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NOTA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NOTA)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+        
+            @Html.ActionLink("Voltar", "Index",new {},new {@class = "btn btn-primary"})
+        </div>
+    }
+</div>
